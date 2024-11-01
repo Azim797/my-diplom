@@ -2,6 +2,7 @@ from fastapi import FastAPI,Request
 from api.userapi.user import user_router
 from api.postapi.post import test_router
 from api.photospai.photos import photo_router
+from db.testservice import get_all_product_db
 import stripe
 from pydantic import BaseModel
 from fastapi.templating import Jinja2Templates
