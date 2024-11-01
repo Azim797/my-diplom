@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd9a45aa-94b5-47df-9178-7ab7b2a6c1ee" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/photospai/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/photospai/photos.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/pokupka.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/product.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/api/postapi/post.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/postapi/post.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/userapi/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/userapi/user.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/__init__.py" afterDir="false" />
@@ -15,6 +19,7 @@
       <change beforePath="$PROJECT_DIR$/db/userservice.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/userservice.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop.db" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,8 +30,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>

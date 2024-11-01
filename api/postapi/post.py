@@ -11,8 +11,8 @@ async def add_game_api(game_name):
     return add_category
 
 @test_router.post("/add_product")
-async def add_product_api(product_name:str,game_name:str,price:str):
-    add_game = add_product_db(product_name,game_name,price)
+async def add_product_api(product_name:str,game_name:str,price:str,product_photo):
+    add_game = add_product_db(product_name,game_name,price,product_photo)
     return add_game
 
 @test_router.get("/get_all_games")

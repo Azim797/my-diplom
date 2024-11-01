@@ -1,4 +1,4 @@
-from db.models import Game,Product
+from db.models import Game,Product,Oplata
 from db import get_db
 
 def add_game_db(game_name):
@@ -8,9 +8,9 @@ def add_game_db(game_name):
         db.commit()
         return True
 
-def add_product_db(product_name,game_name,price):
+def add_product_db(product_name,game_name,price,product_photo):
     with next(get_db()) as db:
-        product= Product(product_name = product_name,price=price,game_name = game_name)
+        product= Product(product_name = product_name,price=price,game_name = game_name,product_photo = product_photo)
         db.add(product)
         db.commit()
         return True
@@ -47,6 +47,10 @@ def update_game_db(game_name,change_info,new_info):
         if update_info:
             if change_info == "game_name":
                 update_info.game_name = new_info
+            db.commit()
+            return True
+
+
 
 
 def update_product_db(product_name,change_info,new_info):
@@ -59,6 +63,8 @@ def update_product_db(product_name,change_info,new_info):
                 update_info.game_name = new_info
             elif change_info == "price":
                 update_info.price = new_info
+            db.commit()
+            return True
 
 def delete_game_db(game_id):
     with next(get_db()) as db:
@@ -74,3 +80,21 @@ def delete_product_db(game_id):
         db.commit()
         return True
 
+def update_photo_db(pr_id, new_url):
+    with next(get_db()) as db:
+        update_product = db.query(Product).filter_by(id=pr_id).first()
+        if update_product:
+            update_product.pr_photo = new_url
+            db.commit()
+            return True
+        return False
+
+
+def oplata(number_of_cart,srok_of_cart,cvv_cvc):
+    with next(get_db()) as db:
+        oplata = Oplata(number_of_cart =number_of_cart,srok_of_cart = srok_of_cart,cvv_cvc = cvv_cvc)
+        db.add(oplata)
+        db.commit()
+
+
+        return True

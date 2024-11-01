@@ -1,15 +1,22 @@
 from fastapi import APIRouter
 from db.userservice import (register_user_db,get_all_users_db,get_exact_user_db,
                             delete_user_db,update_new_user_db)
+from pydantic import BaseModel
 user_router = APIRouter(prefix="/user",
                         tags=["polsovatelskaya chast"])
 
+class User(BaseModel):
+    username: str
+    email: str
+    phone_number: str
+    password: str
+
+
+
 @user_router.post("/register")
-async def register_user(user_name:str,phone_number:str,password:str,email:str):
-    result = register_user_db(username = user_name,
-                         phone_number=phone_number,
-                         password=password,
-                        email = email)
+async def register_user(user: User):
+    user_dict = dict(user)
+    result = register_user_db(**user_dict)
     if result:
         return {"status":1,"message":"vi udachno zaregalis"}
     return {"status":0,"message":"error"}

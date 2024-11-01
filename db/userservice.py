@@ -43,3 +43,5 @@ def update_new_user_db(user_id, change_info, new_info):
                 user.password = new_info
             elif user == "phone_number":
                 user.phone_number= new_info
+            db.commit()
+            return True

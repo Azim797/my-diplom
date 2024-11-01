@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker,declarative_base
 
-SQLALCHEMY_DATABASE_URI ="sqlite:///shop.db"
+SQLALCHEMY_DATABASE_URI ="sqlite:///game_shop.db"
 #cozdaem dvijoc
 engine = create_engine(SQLALCHEMY_DATABASE_URI)
 #cozdaem sessiu

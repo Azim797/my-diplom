@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Форма оплаты</title>
+</head>
+<body>
+  <h1>Оплата</h1>
+  <form method="post" action="/process_payment">
+    <label for="number_of_cart">Номер карты:</label><br>
+    <input type="text" id="number_of_cart" name="number_of_cart" value="{{ form.number_of_cart.data }}" required><br>
+
+    <label for="srok_of_cart">Срок действия карты:</label><br>
+    <input type="date" id="srok_of_cart" name="srok_of_cart" value="{{ form.srok_of_cart.data }}" required><br>
+
+    <label for="cvv_cvc">CVV/CVC код:</label><br>
+    <input type="password" id="cvv_cvc" name="cvv_cvc" value="{{ form.cvv_cvc.data }}" required><br>
+
+    <button type="submit">Оплатить</button>
+  </form>
+</body>
+</html>
+

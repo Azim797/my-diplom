@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clothe Store</title>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1 class="site-title"> Store</h1>
+        </div>
+    </header>
+    {%for product in products%}
+    <div id="product-info" class="product-info">
+        <a href="/" class="back-button">Назад</a>
+        <div class="product-content">
+      <img src="/photos/{{ product.product_photo }}" alt="{{ product.product_name }}" class="product-image">
+            <div class="product-details">
+                <h1 class="product-name">{{ product.product_name }}</h1>
+                <p class="product-price">{{ product.price }} сум</p>
+
+
+                <button type="submit" >
+                    <a href="/oplata">
+                        Купить
+                    </a>
+                </button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    {%endfor%}
+    <style>
+        body {
+            font-family: Roboto, sans-serif;
+            background-color: #B2D9FF;
+            margin: 0;
+        }
+
+        header {
+            width: 100%;
+            height: 60px;
+            background-color: #66B4FF;
+            color: white;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .site-title {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        /* Основной контейнер */
+        #product-info {
+            max-width: 100%;
+            margin: 20px;
+            padding: 0;
+            border-radius: 8px;
+        }
+
+        /* Контейнер для изображения и текста */
+        .product-content {
+            background-color: #CCE5FF;
+            padding: 30px;
+            display: flex;
+            border-radius: 50px;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        /* Изображение продукта */
+        .product-image {
+            width: 30%;
+            height: auto;
+            border-radius: 20px;
+        }
+
+        /* Контейнер для текстовых деталей продукта */
+        .product-details {
+            flex: 1;
+            text-align: left;
+        }
+
+        .product-price-quantity {
+            display: flex;
+            text-align: left;
+        }
+
+        /* Название продукта */
+        .product-name {
+            font-size: 60px;
+            font-weight: 700;
+            color: #333;
+            margin: 0px 0px 0px 30px;
+        }
+
+        /* Описание продукта */
+        .product-description {
+            font-size: 20px;
+            font-weight: bold;
+            color: #444;
+            margin: 20px 0px 0px 30px;
+        }
+
+        /* Цена продукта */
+        .product-price {
+            font-size: 30px;
+            font-weight: bold;
+            color: #333;
+            margin: 20px 0px 0px 30px;
+        }
+
+        /* Количество продукта */
+        .product-quantity {
+            font-size: 30px;
+            font-weight: bold;
+            color: #333;
+            margin: 20px 0px 0px 100px;
+        }
+
+        /* Ссылка для возврата */
+        .back-button {
+            background-color: transparent;
+            color: #28a745;
+            text-align: center;
+            border: 2px solid #28a745;
+            border-radius: 20px;
+            cursor: pointer;
+            display: block;
+            width: 70px;
+            font-size: 1.2em;
+            padding: 5px;
+            text-decoration: none;
+            outline: none;
+            transition: background-color 0.3s, color 0.3s;
+            margin: 20px 0;
+        }
+
+        .back-button:hover {
+            background-color: #28a745;
+            color: white;
+        }
+    </style>
+</body>
+</html>
