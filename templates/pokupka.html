@@ -6,18 +6,44 @@
 </head>
 <body>
   <h1>Оплата</h1>
-  <form method="post" action="/process_payment">
+  <form id="payment-form">
     <label for="number_of_cart">Номер карты:</label><br>
-    <input type="text" id="number_of_cart" name="number_of_cart" value="{{ form.number_of_cart.data }}" required><br>
+    <input type="text" id="number_of_cart" name="number_of_cart" required><br>
 
     <label for="srok_of_cart">Срок действия карты:</label><br>
-    <input type="date" id="srok_of_cart" name="srok_of_cart" value="{{ form.srok_of_cart.data }}" required><br>
+    <input type="date" id="srok_of_cart" name="srok_of_cart" required><br>
 
     <label for="cvv_cvc">CVV/CVC код:</label><br>
-    <input type="password" id="cvv_cvc" name="cvv_cvc" value="{{ form.cvv_cvc.data }}" required><br>
+    <input type="password" id="cvv_cvc" name="cvv_cvc" required><br>
 
     <button type="submit">Оплатить</button>
   </form>
+  <script>
+    document.getElementById('payment-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const formData = new FormData(this);
+
+      fetch('/process_payment', {
+        method: 'POST',
+        body: formData,
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Сеть ответила с ошибкой');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('Успех:', data);
+        alert(data.message);
+      })
+      .catch(error => {
+        console.error('Ошибка:', error);
+        alert('Произошла ошибка при обработке платежа.');
+      });
+    });
+  </script>
 </body>
 </html>
 
